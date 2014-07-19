@@ -1,0 +1,11 @@
+%h1.home-header Study of the Week
+
+
+:javascript
+  <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.17/firebase.js'></script>
+  var fb = new Firebase("https://lincolnhackathon.firebaseio.com/quotes/");
+  fb.push(name: 'fred');
+
+  fb.on("value",function(data){
+      var name = data.val() ? data.val().name : "";
+  });
